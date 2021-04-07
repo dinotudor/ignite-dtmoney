@@ -13,23 +13,24 @@ createServer({
         {
           id: 1,
           title: 'Freela',
+          type: 'deposit',
+          category: 'Dev',
           amount: 3000,
-          category: 'deposit',
-          createdAt: new Date('2021-02-12 09:00:00' )
+          createdAt: new Date('2021-12-07 09:00:00'),
         },
         {
           id: 2,
           title: 'Aluguel',
+          type: 'withdraw',
+          category: 'Despesas',
           amount: 2000,
-          category: 'withdraw',
-          createdAt: new Date('2021-02-13 09:00:00' )
+          createdAt: new Date('2021-12-08 09:00:00'),
         },
       ],
     })
   },
   routes() {
     this.namespace = 'api';
-    this.timing = 2000;
 
     this.get('/transactions', () => {
       return this.schema.all('transaction')
